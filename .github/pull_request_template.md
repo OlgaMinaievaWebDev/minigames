@@ -11,5 +11,4 @@
 5. Score: XX / XX
 
    <!-- List the task criteria and mark each completed item. -->
-
    - [ ] Acceptance criterion
