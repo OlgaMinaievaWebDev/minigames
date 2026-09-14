@@ -1,21 +1,19 @@
 interface AppConfig {
-  rootSelector: string;
-  title: string;
+  rootSelector: string
+  title: string
 }
 
 function renderApp(config: AppConfig): void {
-  const app: HTMLDivElement | null = document.querySelector<HTMLDivElement>(
-    config.rootSelector,
-  );
+  const app: HTMLDivElement | null = document.querySelector<HTMLDivElement>(config.rootSelector)
 
   if (app) {
-    app.textContent = config.title;
+    app.textContent = config.title
   }
 }
 
 const config: AppConfig = {
   rootSelector: '#app',
   title: 'MiniGames',
-};
+}
 
-renderApp(config);
+renderApp(config)
