@@ -1,3 +1,5 @@
+import './styles/globals.scss'
+
 interface AppConfig {
   rootSelector: string
   title: string
