@@ -1,0 +1,38 @@
+@use 'functions' as functions;
+@use 'tokens' as tokens;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: tokens.$font-family-primary;
+  color: tokens.$color-text-primary;
+  background-color: tokens.$color-background;
+}
+
+body {
+  min-width: tokens.$layout-min-width;
+  min-height: 100vh;
+  margin: 0;
+  font-size: functions.rem(16);
+  line-height: tokens.$line-height-body;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}

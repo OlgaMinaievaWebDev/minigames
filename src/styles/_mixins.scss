@@ -1,0 +1,27 @@
+@use 'tokens' as tokens;
+
+@mixin tablet {
+  @media (min-width: tokens.$breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: tokens.$breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin focus-ring {
+  outline: 2px solid tokens.$color-tertiary;
+  outline-offset: 2px;
+}
+
+@mixin button-reset {
+  padding: 0;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+}

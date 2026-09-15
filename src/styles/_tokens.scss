@@ -1,0 +1,103 @@
+// Colors
+$color-white: #ffffff;
+$color-background: #f9f8f3;
+$color-background-footer: #1e1b3a;
+$color-background-footer-light: #2a264f;
+$color-background-footer-lighter: #3c376e;
+
+$color-text-primary: #242145;
+$color-text-secondary: #5f5d75;
+$color-text-muted: #737380;
+$color-text-footer: #b9b5c9;
+
+$color-primary: #ffd02b;
+$color-primary-light: #fde047;
+$color-primary-dark: #e5bb00;
+$color-secondary: #f0eeff;
+$color-tertiary: #3a2ebf;
+
+$color-surface: #fff9e5;
+$color-surface-light: #fffcf5;
+$color-border: #e5e7eb;
+$color-border-strong: #d2d2d2;
+
+$color-like: #ff4b4b;
+$color-error: #b3261e;
+$color-price-free: #0b8a8f;
+
+// Avatar colors
+$color-avatar-1: #e9eef6;
+$color-avatar-2: #a3e2c9;
+$color-avatar-3: #bce3ff;
+$color-avatar-4: #ffc6ff;
+$color-avatar-5: #e8dff5;
+
+// Typography
+$font-family-primary: 'Inter', sans-serif;
+
+$font-size-display-large: 56px;
+$font-size-display-medium: 36px;
+$font-size-display-small: 24px;
+
+$font-size-heading-large: 32px;
+$font-size-heading-medium: 24px;
+$font-size-heading-small: 20px;
+
+$font-size-body-large: 18px;
+$font-size-body-medium: 16px;
+$font-size-body-small: 14px;
+
+$font-size-label-large: 14px;
+$font-size-label-medium: 12px;
+$font-size-label-small: 10px;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Spacing and sizes
+$size-0-5: 4px;
+$size-1: 8px;
+$size-2: 16px;
+$size-3: 24px;
+$size-4: 32px;
+$size-5: 40px;
+$size-6: 48px;
+$size-7: 56px;
+$size-8: 64px;
+$size-9: 72px;
+$size-10: 80px;
+$size-11: 88px;
+$size-12: 96px;
+$size-13: 104px;
+$size-14: 112px;
+$size-15: 120px;
+
+// Corner radii
+$radius-extra-small: 4px;
+$radius-small: 8px;
+$radius-medium: 12px;
+$radius-large: 16px;
+$radius-extra-large: 24px;
+$radius-full: 9999px;
+
+// Button padding
+$button-padding-large-x: 24px;
+$button-padding-large-y: 16px;
+$button-padding-medium-x: 20px;
+$button-padding-medium-y: 10px;
+$button-padding-icon: 8px;
+
+// Shadows
+$shadow-small: 0 2px 8px rgb(36 33 69 / 8%);
+$shadow-medium: 0 4px 16px rgb(36 33 69 / 12%);
+$shadow-large: 0 8px 24px rgb(36 33 69 / 16%);
+
+// Responsive breakpoints
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1280px;
+
+// Layout
+$layout-min-width: 320px;
+$line-height-body: 1.5;
