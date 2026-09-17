@@ -94,10 +94,19 @@ $shadow-small: 0 2px 8px rgb(36 33 69 / 8%);
 $shadow-medium: 0 4px 16px rgb(36 33 69 / 12%);
 $shadow-large: 0 8px 24px rgb(36 33 69 / 16%);
 
+// Border
+$border-width-medium: 2px;
+
+// Interaction states
+$transition-fast: 150ms ease-in-out;
+$opacity-disabled: 0.5;
+
 // Responsive breakpoints
+$breakpoint-mobile: 480px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1280px;
 
 // Layout
 $layout-min-width: 320px;
+$layout-max-width: 1920px;
 $line-height-body: 1.5;
