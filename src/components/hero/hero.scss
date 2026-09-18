@@ -1,0 +1,154 @@
+@use '../../styles/tokens' as tokens;
+@use '../../styles/mixins' as mixins;
+
+.hero {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: tokens.$layout-max-width;
+  min-height: tokens.$hero-height-desktop;
+  margin: 0 auto;
+  padding: tokens.$size-14 tokens.$size-15;
+  background-color: tokens.$color-background-footer-lighter;
+  background-image: url('../../assets/images/hero-background.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: tokens.$size-3;
+    width: min(100%, tokens.$hero-card-width-desktop);
+    padding: tokens.$size-6;
+    border: tokens.$border-width-large solid tokens.$color-text-primary;
+    border-radius: tokens.$radius-extra-large;
+    background-color: tokens.$color-background;
+    box-shadow: tokens.$shadow-inner-card;
+  }
+
+  &__title {
+    margin: 0;
+    color: tokens.$color-text-primary;
+    font-size: tokens.$font-size-display-large;
+    font-weight: tokens.$font-weight-bold;
+    line-height: 1.1;
+  }
+
+  &__description {
+    margin: 0;
+    color: tokens.$color-text-secondary;
+    font-size: tokens.$font-size-body-large;
+    font-weight: tokens.$font-weight-medium;
+    line-height: tokens.$line-height-body;
+
+    &--mobile {
+      display: none;
+    }
+  }
+
+  &__button {
+    @include mixins.button-reset;
+    padding: tokens.$button-padding-large-y tokens.$button-padding-large-x;
+    border: tokens.$border-width-medium solid tokens.$color-text-primary;
+    border-radius: tokens.$radius-small;
+    color: tokens.$color-text-primary;
+    background-color: tokens.$color-primary;
+    font-size: tokens.$font-size-body-large;
+    font-weight: tokens.$font-weight-bold;
+    line-height: 1;
+    transition: background-color tokens.$transition-fast;
+
+    &:hover {
+      background-color: tokens.$color-primary-light;
+    }
+
+    &:active {
+      background-color: tokens.$color-primary-dark;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: tokens.$opacity-disabled;
+    }
+
+    &:focus-visible {
+      @include mixins.focus-ring;
+    }
+  }
+}
+
+@media (max-width: tokens.$breakpoint-tablet) {
+  .hero {
+    min-height: tokens.$hero-height-tablet;
+    padding: tokens.$size-9 tokens.$size-5;
+
+    &__content {
+      gap: tokens.$size-2;
+      width: min(100%, tokens.$hero-card-width-tablet);
+      padding: tokens.$size-3;
+      border-width: tokens.$border-width-tablet-card;
+      border-radius: tokens.$radius-large;
+      box-shadow: tokens.$shadow-hero-card-tablet;
+    }
+
+    &__title {
+      font-size: tokens.$font-size-display-medium;
+      line-height: tokens.$line-height-display-medium;
+    }
+
+    &__description {
+      font-size: tokens.$font-size-body-small;
+      line-height: tokens.$line-height-body-compact;
+    }
+
+    &__button {
+      padding: tokens.$button-padding-medium-y tokens.$button-padding-medium-x;
+      font-size: tokens.$font-size-label-large;
+      line-height: normal;
+    }
+  }
+}
+
+@media (max-width: tokens.$breakpoint-mobile) {
+  .hero {
+    min-height: tokens.$hero-height-mobile;
+    padding: tokens.$size-8 tokens.$size-2;
+
+    &__content {
+      width: min(100%, tokens.$hero-card-width-mobile);
+      padding: tokens.$size-3;
+      border: 0;
+      border-radius: tokens.$radius-medium;
+      box-shadow: tokens.$shadow-hero-card-mobile;
+    }
+
+    &__title {
+      font-size: tokens.$font-size-display-small;
+      line-height: tokens.$line-height-display-small;
+    }
+
+    &__description {
+      font-size: tokens.$font-size-label-medium;
+
+      &--desktop {
+        display: none;
+      }
+
+      &--mobile {
+        display: block;
+      }
+    }
+
+    &__button {
+      width: tokens.$hero-button-width-mobile;
+      height: tokens.$hero-button-height-mobile;
+      padding: tokens.$button-padding-small-y tokens.$button-padding-small-x;
+      border: 0;
+      font-size: tokens.$font-size-label-medium;
+      line-height: tokens.$line-height-button-mobile;
+      box-shadow: inset 0 0 0 tokens.$border-width-medium tokens.$color-text-primary;
+    }
+  }
+}
