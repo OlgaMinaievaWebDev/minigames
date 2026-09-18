@@ -95,9 +95,16 @@ $button-padding-icon: 8px;
 $shadow-small: 0 2px 8px rgb(36 33 69 / 8%);
 $shadow-medium: 0 4px 16px rgb(36 33 69 / 12%);
 $shadow-large: 0 8px 24px rgb(36 33 69 / 16%);
+$shadow-inner-card: inset 0 4px 4px rgb(0 0 0 / 25%);
+$shadow-hero-card-tablet: 6px 6px 0 $color-text-primary;
+$shadow-hero-card-mobile:
+  inset 0 0 0 2px $color-text-primary,
+  4px 4px 0 $color-text-primary;
 
 // Border
 $border-width-medium: 2px;
+$border-width-tablet-card: 2.5px;
+$border-width-large: 3px;
 
 // Interaction states
 $transition-fast: 150ms ease-in-out;
@@ -111,4 +118,16 @@ $breakpoint-desktop: 1280px;
 // Layout
 $layout-min-width: 320px;
 $layout-max-width: 1920px;
+$hero-height-mobile: 331px;
+$hero-height-tablet: 383px;
+$hero-height-desktop: 627px;
+$hero-card-width-mobile: 343px;
+$hero-card-width-tablet: 480px;
+$hero-card-width-desktop: 640px;
+$hero-button-width-mobile: 121px;
+$hero-button-height-mobile: 31px;
 $line-height-body: 1.5;
+$line-height-body-compact: 1.4;
+$line-height-button-mobile: 1.25;
+$line-height-display-small: 1.2;
+$line-height-display-medium: 1.15;
