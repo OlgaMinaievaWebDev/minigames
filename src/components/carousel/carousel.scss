@@ -1,0 +1,266 @@
+@use '../../styles/tokens' as tokens;
+@use '../../styles/mixins' as mixins;
+
+.carousel {
+  width: 100%;
+  max-width: tokens.$layout-max-width;
+  height: 556px;
+  margin: 0 auto;
+  padding: tokens.$size-5 tokens.$size-15;
+  overflow: hidden;
+  background-color: tokens.$color-background;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: tokens.$size-6;
+    margin-bottom: tokens.$size-5;
+  }
+
+  &__heading-group {
+    display: flex;
+    align-items: center;
+    gap: tokens.$size-1;
+  }
+
+  &__accent {
+    width: tokens.$size-1;
+    height: tokens.$size-4;
+    border: tokens.$border-width-medium solid tokens.$color-text-primary;
+    border-radius: tokens.$radius-full;
+    background-color: tokens.$color-primary;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: tokens.$font-size-heading-large;
+    font-weight: tokens.$font-weight-bold;
+    line-height: 1.2;
+  }
+
+  &__controls {
+    display: flex;
+    gap: tokens.$size-2;
+  }
+
+  &__arrow {
+    @include mixins.button-reset;
+    display: grid;
+    place-items: center;
+    width: tokens.$size-6;
+    height: tokens.$size-6;
+    border: tokens.$border-width-medium solid tokens.$color-text-primary;
+    border-radius: tokens.$radius-full;
+    background-color: tokens.$color-white;
+    font-size: tokens.$font-size-heading-medium;
+    line-height: 1;
+    transition:
+      background-color tokens.$transition-fast,
+      transform tokens.$transition-fast;
+
+    &--next {
+      background-color: tokens.$color-primary;
+    }
+
+    &:hover {
+      background-color: tokens.$color-primary-light;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      background-color: tokens.$color-primary-dark;
+      transform: translateY(0);
+    }
+
+    &:focus-visible {
+      @include mixins.focus-ring;
+    }
+  }
+
+  &__track {
+    display: grid;
+    grid-template-columns: 120px 288px minmax(320px, 816px) 288px 120px;
+    justify-content: space-between;
+    gap: tokens.$size-1;
+    width: 100%;
+    height: 388px;
+    margin: 0;
+    padding: 0 tokens.$size-1 tokens.$size-0-5;
+    overflow: hidden;
+    list-style: none;
+  }
+
+  &__item {
+    min-width: 0;
+    height: 384px;
+    container-type: inline-size;
+  }
+}
+
+.carousel-card {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border: tokens.$border-width-tablet-card solid tokens.$color-text-primary;
+  border-radius: tokens.$radius-extra-large;
+  background-color: tokens.$color-white;
+  box-shadow: tokens.$shadow-medium;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: auto 0 0;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: tokens.$size-1;
+    min-height: 112px;
+    padding: tokens.$size-3;
+    color: tokens.$color-white;
+    background: linear-gradient(180deg, transparent 0%, rgb(20 18 45 / 88%) 55%);
+  }
+
+  &__title {
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    font-size: tokens.$font-size-body-medium;
+    font-weight: tokens.$font-weight-semibold;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__stats {
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    gap: tokens.$size-2;
+  }
+
+  &__stat {
+    display: inline-flex;
+    align-items: center;
+    gap: tokens.$size-0-5;
+    color: tokens.$color-white;
+    font-size: tokens.$font-size-body-small;
+    font-weight: tokens.$font-weight-semibold;
+    white-space: nowrap;
+  }
+
+  &__stat-icon {
+    font-size: tokens.$font-size-heading-small;
+    line-height: 1;
+
+    &--likes {
+      color: tokens.$color-like;
+    }
+
+    &--rating {
+      color: tokens.$color-primary;
+    }
+  }
+}
+
+@container (min-width: 288px) {
+  .carousel-card__overlay {
+    display: flex;
+  }
+}
+
+@media (max-width: tokens.$breakpoint-desktop) {
+  .carousel {
+    height: 400px;
+    padding: tokens.$size-3 tokens.$size-5;
+
+    &__header {
+      margin-bottom: tokens.$size-3;
+    }
+
+    &__track {
+      grid-template-columns: 105px 448px 105px;
+      justify-content: center;
+      gap: 7px;
+      height: 284px;
+      transform: none;
+    }
+
+    &__item {
+      height: 280px;
+
+      &:first-child,
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: tokens.$breakpoint-mobile) {
+  .carousel {
+    height: 283px;
+    padding: tokens.$size-2;
+
+    &__header {
+      min-height: tokens.$size-4;
+      margin-bottom: tokens.$size-2;
+    }
+
+    &__title {
+      font-size: tokens.$font-size-heading-medium;
+    }
+
+    &__accent {
+      width: 6px;
+      height: tokens.$size-3;
+    }
+
+    &__controls {
+      display: none;
+    }
+
+    &__track {
+      display: flex;
+      gap: 0;
+      height: 204px;
+      padding: 0 tokens.$size-0-5 tokens.$size-0-5;
+      transform: none;
+    }
+
+    &__item {
+      display: none;
+      flex: 0 0 56px;
+      height: 200px;
+
+      &:nth-child(2) {
+        display: block;
+      }
+
+      &:nth-child(3) {
+        display: block;
+        flex-basis: 218px;
+        margin-left: -10px;
+      }
+
+      &:nth-child(4) {
+        display: block;
+        margin-left: -10px;
+      }
+    }
+  }
+
+  .carousel-card {
+    border-width: tokens.$border-width-medium;
+    border-radius: tokens.$radius-large;
+
+    &__overlay {
+      display: none !important;
+    }
+  }
+}
